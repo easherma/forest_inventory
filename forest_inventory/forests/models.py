@@ -8,12 +8,13 @@ from django.db.models.fields import CharField, IntegerField, DecimalField, TextF
 from django.db.models.fields.files import ImageField
 
 
-class Forest(models.Model):
-    class ForestType(TextChoices):
-        CONSERVATION = "Conservation"
-        REFORESTATION = "Reforestation"
-        __empty__ = "Unknown"
+class ForestType(TextChoices):
+    CONSERVATION = "Conservation"
+    REFORESTATION = "Reforestation"
+    __empty__ = "Unknown"
 
+
+class Forest(models.Model):
     name = CharField(max_length=255)
     type = models.CharField(max_length=255, choices=ForestType.choices)
     image = ImageField()
