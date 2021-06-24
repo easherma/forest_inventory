@@ -1,5 +1,33 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
-{{forest.name}}
+<h1>{{forest.name}}</h1>
+<figure class="figure">
+  <img src="{{ forest.image.url }}" class="card-img-top" alt="..." />
+</figure>
+<p class="fs-5 col-md-8">{{forest.type}}</p>
+<p class="fs-5 col-md-8">{{forest.description}}</p>
+<a class="btn btn-primary" href="/forests/" role="button">&laquo; Back to forest inventory</a>
+<hr class="col-3 col-md-2 mb-5" />
+
+<div class="row g-5">
+  <div class="col-md-6">
+    <h2>Stats</h2>
+    <ul class="icon-list">
+      <li class="icon-list">Carbon stores: {{forest.carbon_stored}}</li>
+      <li class="icon-list">
+        Change in carbon stored, last 30 days:
+        {{forest.change_in_carbon_stored_in_last_30_days}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <h2>Geography</h2>
+    <ul class="icon-list">
+      <li>Country: {{ forest.country}}</li>
+      <li>Latitude and longitude: {{ forest.latitude}} , {{ forest.longitude}}</li>
+      <li>Area covered: {{forest.area_covered}}</li>
+    </ul>
+  </div>
+</div>
 {% endblock %}

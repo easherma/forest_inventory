@@ -9,18 +9,19 @@
               <div class="card-header">
                 {{forest.country}}
               </div>
+              <figure class="figure">
               <img src="{{ forest.image.url }}" class="card-img-top" alt="...">
+              </figure>
               <div class="card-body">
                 <h5 class="card-title">{{forest.name}}</h5>
                 <p class="card-text">{{forest.description}}</p>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">Current area covered: {{forest.area_covered}}</li>
+                <li class="list-group-item">Carbon stored: {{forest.carbon_stored}} </li>
               </ul>
               <div class="card-body">
-                <a href="/forests/{{forest.pk}}" class="card-link">Card link</a>
+                <a href="/forests/{{forest.pk}}" class="card-link">See more details</a>
 
               </div>
             </div>
@@ -33,7 +34,7 @@
     {% if page_obj.has_previous %}
       <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo; Previous </a></li>
     {% else %}
-      <li class="page-item disabled"><span>&laquo; Previous</span></li>
+      <li class="page-item disabled"><span class="page-link">&laquo; Previous</span></li>
     {% endif %}
     {% for i in paginator.page_range %}
       {% if page_obj.number == i %}
