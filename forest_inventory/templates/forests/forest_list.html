@@ -4,6 +4,7 @@
     <h2>Forests</h2>
     <ul>
         {% for publisher in object_list %}
+            <li>{{ publisher.pk }}</li>
             <li>{{ publisher.name }}</li>
         {% endfor %}
     </ul>
