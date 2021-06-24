@@ -6,6 +6,7 @@ import enum
 from django.db.models.enums import TextChoices
 from django.db.models.fields import CharField, IntegerField, DecimalField, TextField
 from django.db.models.fields.files import ImageField
+import django_filters
 
 
 class ForestType(TextChoices):
@@ -25,3 +26,12 @@ class Forest(models.Model):
     description = TextField()
     carbon_stored = IntegerField()
     change_in_carbon_stored_in_last_30_days = IntegerField()
+
+
+class ForestTypeFilter(django_filters.FilterSet):
+    type = django_filters.ChoiceFilter(choices=ForestType.choices)
+    name = django_filters.CharFilter(lookup_expr='icontains')
+
+    class Meta:
+        model = Forest
+        fields = ["name", "type"]

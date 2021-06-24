@@ -75,7 +75,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "forest_inventory.users.apps.UsersConfig",
-    "forests",
+    "forest_inventory.forests.apps.ForestsConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
