@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from forests.models import Forest
 
-# Create your views here.
+class ForestListView(ListView):
+    model = Forest
