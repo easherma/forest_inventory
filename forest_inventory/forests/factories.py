@@ -14,6 +14,6 @@ class ForestFactory(DjangoModelFactory):
     longitude = Faker("longitude")
     area_covered = Faker("random_int")
     country = Faker("country")
-    description = Faker("paragraphs")
+    description = Faker("text")
     carbon_stored = Faker("random_int")
     change_in_carbon_stored_in_last_30_days = Faker("random_int")

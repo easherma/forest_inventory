@@ -2,7 +2,6 @@
 <h2>Forest Inventory</h2>
 
 <form method="get" novalidate>
-  {% csrf_token %}
   <div class="row">
   {% include 'includes/filter_form.html' with form=filter.form %}
   </div>
@@ -14,7 +13,7 @@
     <div class="card" style="width: 18rem">
       <div class="card-header">{{forest.country}}</div>
       <figure class="figure">
-        <img src="{{ forest.image.url }}" class="card-img-top" alt="..." />
+        <img src="https://source.unsplash.com/360x230/?forest/{{forest.pk}}" class="card-img-top" alt="..." />
       </figure>
       <div class="card-body">
         <h5 class="card-title">{{forest.name}}</h5>
