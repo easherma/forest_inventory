@@ -20,6 +20,8 @@ A main trade-off here is that doing a SPA-style site, or having search and filte
 
 However, the project description and mockup did suggest a fairly traditional kind of site. My instinct is always to reach for the simplest, robust tool to do the job that lets me focus my creative energy on the actual problem space.
 
+There are also alot of beneficall functionality that came along for the ride, such as url query parameters and routing, that would all have to be duplicated client-side going with a React approach. 
+
 P.S. Just for fun, I did take a stab at this excercise using the stack mentioned in the job description (FastAPI with React, using SQLAlechemy and Postgres for the DB). I hadn't used FastAPI before and found it really interesting!
 
 ### TODOs:
